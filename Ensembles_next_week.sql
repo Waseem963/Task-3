@@ -1,6 +1,4 @@
 -- View version of fourth query
-4.
-
 CREATE VIEW view_next_week_ensemble AS
 select
     TO_CHAR(l.scheduledtime, 'Day') AS "Day", 
