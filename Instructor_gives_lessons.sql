@@ -12,8 +12,7 @@ JOIN
     instructor i ON l.instructorId = i.instructorId
 JOIN 
     person p ON i.personId = p.personId
-JOIN 
-    price_scheme ps ON l.pricingId = ps.pricingId
+
 WHERE 
     EXTRACT(YEAR FROM COALESCE(l.appointmentTime, l.scheduledTime)) = EXTRACT(YEAR FROM CURRENT_DATE)
     AND EXTRACT(MONTH FROM COALESCE(l.appointmentTime, l.scheduledTime)) = EXTRACT(MONTH FROM CURRENT_DATE)
@@ -42,8 +41,7 @@ BEGIN
         instructor i ON l.instructorId = i.instructorId
     JOIN 
         person p ON i.personId = p.personId
-    JOIN 
-        price_scheme ps ON l.pricingId = ps.pricingId
+   
     WHERE 
         EXTRACT(YEAR FROM COALESCE(l.appointmentTime, l.scheduledTime)) = EXTRACT(YEAR FROM CURRENT_DATE)
         AND EXTRACT(MONTH FROM COALESCE(l.appointmentTime, l.scheduledTime)) = EXTRACT(MONTH FROM CURRENT_DATE)
